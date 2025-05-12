@@ -15,3 +15,18 @@ app.engine('ejs', ejsmate);
 
 9 : now use <%- include('../includes/sidebar.ejs') %> to include partials in boilerplate
 10: and use  <%- body %>  in between so you can have everypage code in this body 
+
+
+
+RESTful API 
+
+
+
+GET 
+POST 
+PUT    update 
+PATCH  partial update   .  
+DELETE 
+
+
+npm i method-override 
