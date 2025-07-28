@@ -3,23 +3,23 @@
       <h1>Edit Student</h1>
       <div class="card col-8">
           <div class="card-body">
-            <form action="/student/<%= student.id %>/edit" method="POST">
+            <form action="/teacher/<%= teacher.id %>/edit" method="POST">
               <div class="row">
                 <div class="mb-3 col-6">
                   <label for="ID" class="form-label">ID</label>
-                  <input type="number" class="form-control" value="<%= student.id %>" id="ID" name="id">
+                  <input type="number" class="form-control" value="<%= teacher.id %>" id="ID" name="id">
                 </div>
                 <div class="mb-3 col-6">
                   <label for="Name" class="form-label">Name</label>
-                  <input type="text" class="form-control" value="<%= student.name %>" id="Name" name="name">
+                  <input type="text" class="form-control" value="<%= teacher.name %>" id="Name" name="name">
                 </div>
                 <div class="mb-3 col-6">
                   <label for="Last" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" value="<%= student.last %>" id="Last" name="last">
+                  <input type="text" class="form-control" value="<%= teacher.last %>" id="Last" name="last">
                 </div>
                 <div class="mb-3 col-6">
                   <label for="age" class="form-label">Age</label>
-                  <input type="number" class="form-control" value="<%= student.age %>" id="Age" name="age">
+                  <input type="number" class="form-control" value="<%= teacher.age %>" id="Age" name="age">
                 </div>
               </div>
               <div class="mb-3 offset-5"> 

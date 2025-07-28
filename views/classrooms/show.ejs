@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Classroom Information</h1>
+  <div class="card col-8 offset-2 mb-4">
+    <div class="card-body">
+      <h3><strong>Classroom ID:</strong> <%= classroom.id %></h3>
+      <h3><strong>Classroom Name:</strong> <%= classroom.name %></h3>
+    </div>
+  </div>
+
+  <h2>Students in This Classroom</h2>
+  <% if (classroom.Students.length > 0) { %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% classroom.Students.forEach(student => { %>
+          <tr>
+            <td><%= student.id %></td>
+            <td><%= student.name %></td>
+            <td><%= student.last %></td>
+            <td><%= student.age %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p>No students are assigned to this classroom yet.</p>
+  <% } %>
+</div>

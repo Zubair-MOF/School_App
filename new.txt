@@ -1,0 +1,17 @@
+// Database connection (example, adjust as needed)
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'school',
+    password:'khairy@123'
+})
+
+
+
+// index route 
+app.get("/student/index", (req, res) => {
+    const sql = "SELECT * FROM student";
+    connection.query(sql, (err, results) => {
+       
+    });
+});

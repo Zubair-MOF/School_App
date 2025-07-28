@@ -1,12 +1,12 @@
 <div class="container">
-    <h1>Manage student</h1>
+    <h1>Manage teacher</h1>
     <div class="row ">
       <div class="button offset-10">
-          <a href="/student/create"><button class="btn btn-info">+ Add Student</button></a>
+          <a href="/teacher/create"><button class="btn btn-info">+ Add Teacher</button></a>
       </div>
       <div class="button">
-        <a href="/student/assign">
-          <button class="btn btn-warning">Assign Student to Classroom</button>
+        <a href="/teacher/assign">
+          <button class="btn btn-warning">Assign Teacher to Classroom</button>
         </a>
      </div>
   </div>
@@ -23,16 +23,16 @@
           </tr>
         </thead>
         <tbody>
-          <% for ( student of students) { %>
+          <% for ( teacher of teachers) { %>
             <tr>
-              <td><%= student.id %></td>
-              <td><%= student.name %></td>
-              <td><%= student.last %></td>
-              <td><%= student.age %></td>
-              <td><a href="/student/<%= student.id %>/show"><button class="btn btn-dark">Show</button></a></td>
-              <td><a href="/student/<%= student.id %>/edit"><button class="btn btn-info">Edit</button></a></td>
+              <td><%= teacher.id %></td>
+              <td><%= teacher.name %></td>
+              <td><%= teacher.last %></td>
+              <td><%= teacher.age %></td>
+              <td><a href="/teacher/<%= teacher.id %>/show"><button class="btn btn-dark">Show</button></a></td>
+              <td><a href="/teacher/<%= teacher.id %>/edit"><button class="btn btn-info">Edit</button></a></td>
               <td>
-                <form action="/student/<%=student.id%>/delete?_method=DELETE" method="post" >
+                <form action="/teacher/<%=teacher.id%>/delete?_method=DELETE" method="post" >
                  <button class="btn btn-danger">Delete</button>
                 </form>
               </td>

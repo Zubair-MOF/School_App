@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row offset-2">
+      <h1>Edit Classroom</h1>
+      <div class="card col-8">
+          <div class="card-body">
+            <form action="/classrooms/<%= classroom.id %>/edit" method="POST">
+              <div class="row">
+                <div class="mb-3 col-6">
+                  <label for="ID" class="form-label">ID</label>
+                  <input type="number" class="form-control" value="<%= classroom.id %>" id="ID" name="id" readonly>
+                </div>
+                <div class="mb-3 col-6">
+                  <label for="Name" class="form-label">Classroom Name</label>
+                  <input type="text" class="form-control" value="<%= classroom.name %>" id="Name" name="name" required>
+                </div>
+              </div>
+              <div class="mb-3 offset-5"> 
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+  </div>
+</div>

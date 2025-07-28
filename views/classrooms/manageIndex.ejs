@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Manage Classrooms</h1>
+    <div class="row">
+        <div class="button offset-10">
+            <a href="/classrooms/create"><button class="btn btn-info">+ Add Classroom</button></a>
+        </div>
+    </div>
+    <table class="table table-hover mt-4">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Classroom Name</th>
+            <th scope="col">Show</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (const classroom of classrooms) { %>
+            <tr>
+              <td><%= classroom.id %></td>
+              <td><%= classroom.name %></td>
+              <td><a href="/classrooms/<%= classroom.id %>/show"><button class="btn btn-dark">Show</button></a></td>
+              <td><a href="/classrooms/<%= classroom.id %>/edit"><button class="btn btn-info">Edit</button></a></td>
+              <td>
+                <form action="/classrooms/<%= classroom.id %>/delete?_method=DELETE" method="POST">
+                  <button class="btn btn-danger">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+    </table>
+</div>

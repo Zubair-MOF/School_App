@@ -1,0 +1,9 @@
+
+
+Database conection . config/db.js 
+
+Model  --> student -> classroom 
+controller -->  studentController --> classroomController 
+View     -->  student/index.ejs --> classroom/index.ejs
+Route   --> studentRoutes  --> classroomRoutes 
+app.js  --> call 
