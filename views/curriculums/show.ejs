@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="container">
+    <div class="row offset-2">
+      <h1>Curriculum Information </h1>
+      <div class="button offset-10">
+        <a href="/curriculum/<%= curriculum.id %>/assignSubjectToCurrentCurriculum"><button class="btn btn-info">+ Assign subject to
+            Curriculum</button></a>
+      </div>
+      <div class="card col-8">
+        <div class="card-body">
+          <div class="row">
+            <div class="mb-3 col-6">
+              <label class="form-label">ID</label>
+              <h3>
+                <%= curriculum.id %>
+              </h3>
+            </div>
+            <div class="mb-3 col-6">
+              <label class="form-label">Name</label>
+              <h3>
+                <%= curriculum.name %>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Credits</th>
+          <th scope="col">Show</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for ( subject of subjects) { %>
+          <tr>
+            <td>
+              <%= subject.id %>
+            </td>
+            <td>
+              <%= subject.name %>
+            </td>
+            <td>
+              <%= subject.credits %>
+            </td>
+            <td><a href="/subject/<%= subject.id %>/show"><button class="btn btn-dark">Show</button></a></td>
+            <td><a href="/subject/<%= subject.id %>/edit"><button class="btn btn-info">Edit</button></a></td>
+            <td>
+              <form action="/curriculum/<%= curriculum.id %>/subject/<%= subject.id %>/delete?_method=DELETE"
+                method="POST">
+                <button class="btn btn-danger" type="submit">Remove</button>
+              </form>
+
+            </td>
+          </tr>
+          <% } %>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Manage curriculum</h1>
+    <div class="row ">
+      <div class="button offset-3">
+          <a href="/curriculum/create"><button class="btn btn-info">+ Add Curriculum</button></a>
+      </div>
+      <div class="button offset-10">
+          <a href="/curriculum/assignSubjectToCurriculum"><button class="btn btn-info">+ Assign subject to Curriculum</button></a>
+      </div>
+  </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First</th>
+            <th scope="col">Show</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for ( curriculum of curriculums) { %>
+            <tr>
+              <td><%= curriculum.id %></td>
+              <td><%= curriculum.name %></td>
+              <td><a href="/curriculum/<%= curriculum.id %>/show"><button class="btn btn-dark">Show</button></a></td>
+              <td><a href="/curriculum/<%= curriculum.id %>/edit"><button class="btn btn-info">Edit</button></a></td>
+              <td>
+                <form action="/curriculum/<%=curriculum.id%>/delete?_method=DELETE" method="post" >
+                 <button class="btn btn-danger">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% } %>
+         
+        </tbody>
+      </table>
+</div>

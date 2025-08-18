@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="row offset-2">
+    <h1>Assign Subject to Curriculum</h1>
+    <div class="card col-8">
+      <div class="card-body">
+        <form action="/curriculum/assignSubjectToCurriculum" method="POST">
+          <div class="mb-3">
+            <label for="subjectId" class="form-label">Select Subject</label>
+            <select class="form-select" id="SubjectId" name="SubjectId" required>
+              <% subjects.forEach(subject => { %>
+                <option value="<%= subject.id %>"><%= subject.name %> <%= subject.last %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="curriculumId" class="form-label">Select Curriculum</label>
+            <select class="form-select" id="CurriculumId" name="CurriculumId" required>
+              <% curriculums.forEach(curriculum => { %>
+                <option value="<%= curriculum.id %>"><%= curriculum.name %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="mb-3 offset-5">
+            <button type="submit" class="btn btn-primary">Assign</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

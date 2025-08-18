@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="row offset-2">
+    <h1>Assign Student to Classroom</h1>
+    <div class="card col-8">
+      <div class="card-body">
+        <form action="/student/assignStudentToClassroom" method="POST">
+          <div class="mb-3">
+            <label for="studentId" class="form-label">Select Student</label>
+            <select class="form-select" id="studentId" name="studentId" required>
+              <% students.forEach(student => { %>
+                <option value="<%= student.id %>"><%= student.name %> <%= student.last %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="classroomId" class="form-label">Select Classroom</label>
+            <select class="form-select" id="classroomId" name="classroomId" required>
+              <% classrooms.forEach(classroom => { %>
+                <option value="<%= classroom.id %>"><%= classroom.name %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="mb-3 offset-5">
+            <button type="submit" class="btn btn-primary">Assign</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

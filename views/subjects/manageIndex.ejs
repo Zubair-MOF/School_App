@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Manage subject</h1>
+    <div class="row ">
+      <div class="button offset-10">
+          <a href="/subject/create"><button class="btn btn-info">+ Add Subject</button></a>
+      </div>
+  </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Credits</th>
+            <th scope="col">Teacher</th>
+            <th scope="col">Show</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for ( subject of subjects) { %>
+            <tr>
+              <td><%= subject.id %></td>
+              <td><%= subject.name %></td>
+              <td><%= subject.credits %></td>
+              <td><%= subject.teacher ? subject.teacher.name + ' ' + subject.teacher.last : 'No Teacher' %></td>
+              <td><a href="/subject/<%= subject.id %>/show"><button class="btn btn-dark">Show</button></a></td>
+              <td><a href="/subject/<%= subject.id %>/edit"><button class="btn btn-info">Edit</button></a></td>
+              <td>
+                <form action="/subject/<%=subject.id%>/delete?_method=DELETE" method="post" >
+                 <button class="btn btn-danger">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% } %>
+         
+        </tbody>
+      </table>
+</div>

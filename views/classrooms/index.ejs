@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Hello Dashboard</h1>
+    <div class="row ">
+        <div class="button offset-10">
+            <a href="/classroom/create"><button class="btn btn-info">+ Add Classroom</button></a>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          
+          <% for ( classroom of classrooms) { %>
+            <tr>
+              <td><%= classroom.id %></td>
+              <td><%= classroom.name %></td>
+              
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+</div>

@@ -30,3 +30,8 @@ DELETE
 
 
 npm i method-override 
+
+
+
+student - > classroom -> curriculum -> subjects -> credits 
+

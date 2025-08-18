@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row ">
+        <div class="button offset-10">
+            <a href="/subject/create"><button class="btn btn-info">+ Add Subject</button></a>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Credits</th>
+            <th scope="col">Teacher</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <% for ( subject of subjects) { %>
+            <tr>
+                <td><%= subject.id %></td>
+              <td><%= subject.name %></td>
+              <td><%= subject.credits %></td>
+              <td><%= subject.teacher ? subject.teacher.name + ' ' + subject.teacher.last : 'No Teacher' %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+</div>
